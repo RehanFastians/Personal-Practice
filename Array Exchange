@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int array[5];
+    int* ptr = array;
+
+    // Input values
+    for (int i = 0; i < 5; i++) {
+        printf("\nEnter %d value: ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    // Print original values
+    for (int i = 0; i < 5; i++) {
+        printf("\nThe %d value is %d", i + 1, array[i]);
+    }
+
+    // Reverse the array in place
+    for (int i = 0; i < 2; i++) {
+        int temp = array[i];
+        array[i] = array[4 - i];
+        array[4 - i] = temp;
+    }
+
+    // Print reversed values
+    for (int i = 0; i < 5; i++) {
+        printf("\nThe %d value after reversing is %d", i + 1, array[i]);
+    }
+
+    return 0;
+}
